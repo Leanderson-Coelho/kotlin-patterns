@@ -1,8 +1,10 @@
+package Strategy
+
 interface ConvertStrategy{
 	fun convert(map: Map<String, String>);
 }
 
-class ConvertToJson: ConvertStrategy{
+class ConvertToJson: ConvertStrategy {
 	override fun convert(map: Map<String, String>){
 		var json: String = "{\n";
 		for((k,v) in map){
@@ -13,7 +15,7 @@ class ConvertToJson: ConvertStrategy{
 	}
 }
 
-//class ConvertToXML: ConvertStrategy{
+//class ConvertToXML: Strategy.ConvertStrategy{
 //	override fun convert(map: Map)
 //}
 
