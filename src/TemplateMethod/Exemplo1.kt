@@ -51,7 +51,7 @@ abstract class TemplateDataMine(val readerFile: ReadFile) {
 //Mineração com arquivos do tipo DOC
 //Classe que implementa a abstração de TemplateDataMine para fazer
 //a mineração em arquivos DOC
-class DocDataMiner(val readFileDoc: ReadFileDoc): TemplateDataMine(readFileDoc){
+class DocDataMiner(val readFileDoc: ReadFile): TemplateDataMine(readFileDoc){
 	
 	//faz leitura somente de DOC
 	override fun getDado(origemArquivo: String): String{
@@ -63,7 +63,7 @@ class DocDataMiner(val readFileDoc: ReadFileDoc): TemplateDataMine(readFileDoc){
 //Mineração com arquivos do tipo CSV
 //Classe que implementa a abstração de TemplateDataMine para fazer
 //a mineração em arquivos CSV
-class CSVDataMiner(val readFileCSV: ReadFileCSV): TemplateDataMine(readFileCSV){
+class CSVDataMiner(val readFileCSV: ReadFile): TemplateDataMine(readFileCSV){
 	
 	//faz leitura somente de CSV
 	override fun getDado(origemArquivo: String): String{
@@ -75,7 +75,7 @@ class CSVDataMiner(val readFileCSV: ReadFileCSV): TemplateDataMine(readFileCSV){
 //Mineração com arquivos do tipo PDF
 //Classe que implementa a abstração de TemplateDataMine para fazer
 //a mineração em arquivos PDF
-class PDFDataMiner(val readFilePDF: ReadFilePDF): TemplateDataMine(readFilePDF){
+class PDFDataMiner(val readFilePDF: ReadFile): TemplateDataMine(readFilePDF){
 	
 	//faz leitura somente de PDF
 	override fun getDado(origemArquivo: String): String{
@@ -88,15 +88,15 @@ class PDFDataMiner(val readFilePDF: ReadFilePDF): TemplateDataMine(readFilePDF){
 
 fun main() {
 	// DOC
-	var readFileDoc: ReadFileDoc = ReadFileDoc();
+	var readFileDoc: ReadFile = ReadFileDoc();
 	var docDataMine: DocDataMiner = DocDataMiner(readFileDoc);
 	docDataMine.mine("data.txt");
 	// CSV
-	var readFileCSV: ReadFileCSV = ReadFileCSV();
+	var readFileCSV: ReadFile = ReadFileCSV();
 	var csvDataMine: CSVDataMiner = CSVDataMiner(readFileCSV);
 	csvDataMine.mine("data.txt");
 	// PDF
-	var readFilePDF: ReadFilePDF = ReadFilePDF();
+	var readFilePDF: ReadFile = ReadFilePDF();
 	var PDFDataMine: PDFDataMiner = PDFDataMiner(readFilePDF);
 	PDFDataMine.mine("data.txt");
 	
