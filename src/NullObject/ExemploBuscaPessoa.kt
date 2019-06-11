@@ -16,7 +16,7 @@ class Aluno(var nomeAluno:String, var idadeAluno: Int): AlunoAbstract() {
 	}
 }
 
-class AlunoNullObject() : AlunoAbstract(){
+object AlunoNullObject : AlunoAbstract(){
 	override fun getNome(): String{
 		return "Não foi possível encontrar o aluno";
 	}
@@ -33,7 +33,7 @@ class BuscaAluno(){
 			if(a.getNome().equals(nomeBusca))
 				return a;
 		}
-		return AlunoNullObject();
+		return AlunoNullObject;
 	}
 	
 }
