@@ -10,6 +10,8 @@ import org.koin.core.logger.Level
 
 class MainApplication: Application(){
 
+    //https://dagger.dev/android
+
     override fun onCreate() {
         super.onCreate()
 
